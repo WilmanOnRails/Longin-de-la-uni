@@ -83,9 +83,29 @@ namespace Longin_de_la_uni.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fondoUni1 {
+            get {
+                object obj = ResourceManager.GetObject("fondoUni1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap llave {
             get {
                 object obj = ResourceManager.GetObject("llave", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap llave_terminada {
+            get {
+                object obj = ResourceManager.GetObject("llave terminada", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

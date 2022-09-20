@@ -43,6 +43,10 @@
             this.pnlOpciones = new System.Windows.Forms.Panel();
             this.lblOpciones = new System.Windows.Forms.Label();
             this.pbLlave = new System.Windows.Forms.PictureBox();
+            this.lblTerminos = new System.Windows.Forms.LinkLabel();
+            this.pnl3 = new System.Windows.Forms.Panel();
+            this.lblCookies = new System.Windows.Forms.LinkLabel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.pnlPrincipal.SuspendLayout();
             this.panel1.SuspendLayout();
             this.btnSiguiente.SuspendLayout();
@@ -50,6 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLlave)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlPrincipal
@@ -242,15 +247,77 @@
             this.pbLlave.Size = new System.Drawing.Size(33, 30);
             this.pbLlave.TabIndex = 0;
             this.pbLlave.TabStop = false;
-            this.pbLlave.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
+            this.pbLlave.MouseEnter += new System.EventHandler(this.pnlOpciones_MouseLeave);
+            this.pbLlave.MouseLeave += new System.EventHandler(this.pnlOpciones_MouseLeave);
+            // 
+            // lblTerminos
+            // 
+            this.lblTerminos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTerminos.AutoSize = true;
+            this.lblTerminos.BackColor = System.Drawing.Color.Transparent;
+            this.lblTerminos.Font = new System.Drawing.Font("Segoe UI", 7.55F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTerminos.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.lblTerminos.LinkColor = System.Drawing.Color.White;
+            this.lblTerminos.Location = new System.Drawing.Point(748, 6);
+            this.lblTerminos.Name = "lblTerminos";
+            this.lblTerminos.Size = new System.Drawing.Size(91, 13);
+            this.lblTerminos.TabIndex = 2;
+            this.lblTerminos.TabStop = true;
+            this.lblTerminos.Text = "Términos de uso";
+            this.lblTerminos.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.lblTerminos.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // pnl3
+            // 
+            this.pnl3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnl3.AutoSize = true;
+            this.pnl3.BackColor = System.Drawing.Color.Transparent;
+            this.pnl3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnl3.Location = new System.Drawing.Point(960, 2);
+            this.pnl3.Name = "pnl3";
+            this.pnl3.Size = new System.Drawing.Size(33, 25);
+            this.pnl3.TabIndex = 4;
+            this.pnl3.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl3_Paint);
+            this.pnl3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pnl3_MouseClick);
+            // 
+            // lblCookies
+            // 
+            this.lblCookies.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCookies.AutoSize = true;
+            this.lblCookies.BackColor = System.Drawing.Color.Transparent;
+            this.lblCookies.Font = new System.Drawing.Font("Segoe UI", 7.55F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCookies.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.lblCookies.LinkColor = System.Drawing.Color.White;
+            this.lblCookies.Location = new System.Drawing.Point(845, 6);
+            this.lblCookies.Name = "lblCookies";
+            this.lblCookies.Size = new System.Drawing.Size(109, 13);
+            this.lblCookies.TabIndex = 3;
+            this.lblCookies.TabStop = true;
+            this.lblCookies.Text = "Privacidad y cookies";
+            this.lblCookies.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.lblCookies.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.lblCookies);
+            this.panel2.Controls.Add(this.lblTerminos);
+            this.panel2.Controls.Add(this.pnl3);
+            this.panel2.Location = new System.Drawing.Point(0, 613);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1009, 30);
+            this.panel2.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackgroundImage = global::Longin_de_la_uni.Properties.Resources.fondoUni;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(996, 637);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlOpciones);
             this.Controls.Add(this.pnlPrincipal);
             this.DoubleBuffered = true;
@@ -260,6 +327,7 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.SizeChanged += new System.EventHandler(this.Form1_SizeChanged);
+            this.Resize += new System.EventHandler(this.Form1_Resize);
             this.pnlPrincipal.ResumeLayout(false);
             this.pnlPrincipal.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -272,6 +340,8 @@
             this.pnlOpciones.ResumeLayout(false);
             this.pnlOpciones.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLlave)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -293,5 +363,9 @@
         private Label lblOpciones;
         private Label lblVacio;
         private Panel panel1;
+        private LinkLabel lblTerminos;
+        private Panel pnl3;
+        private LinkLabel lblCookies;
+        private Panel panel2;
     }
 }
